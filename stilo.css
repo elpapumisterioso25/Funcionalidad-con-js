@@ -1,0 +1,15 @@
+.pokemon-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.selected-pokemon {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
