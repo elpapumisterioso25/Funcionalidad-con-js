@@ -1,4 +1,4 @@
-// Funcion para obtener datos de un Pokemon
+//obtener datos de un Pokemon
 async function fetchPokemon(id) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -13,7 +13,7 @@ async function fetchPokemon(id) {
     }
 }
 
-// Funcion para renderizar un Pokemon
+//renderizar un Pokemon
 function renderPokemon(pokemon, container) {
     const pokemonElement = document.createElement('div');
     pokemonElement.className = 'pokemon-card';
@@ -30,13 +30,13 @@ function renderPokemon(pokemon, container) {
     container.appendChild(pokemonElement);
 }
 
-// Funcion para seleccionar un Pokémon
+//seleccionar un Pokémon
 function selectPokemon(pokemon) {
     localStorage.setItem('selectedPokemon', JSON.stringify(pokemon));
     renderSelectedPokemon();
 }
 
-// Funcion para renderizar el Pokemon seleccionado
+//renderizar el Pokemon seleccionado
 function renderSelectedPokemon() {
     const selectedPokemon = JSON.parse(localStorage.getItem('selectedPokemon'));
     const container = document.getElementById('selectedPokemon');
@@ -53,14 +53,14 @@ function renderSelectedPokemon() {
     }
 }
 
-// Funcion principal para inicializar la aplicacion
+// inicializar la aplicacion
 async function init() {
     const pokemonList = document.getElementById('pokemonList');
     
     // Cargar Pokemon seleccionado del localStorage
     renderSelectedPokemon();
     
-    // Cargar lista de Pokémon
+    //lista de Pokemon
     for (let i = 1; i <= 9; i++) {
         const pokemon = await fetchPokemon(i);
         if (pokemon) {
